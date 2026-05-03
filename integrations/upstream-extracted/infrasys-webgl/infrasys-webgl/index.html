@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LXD Info System — WebGL Bundle</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <div id="app-shell">
+    <header id="topbar">
+      <div class="brand">
+        <div class="brand-cube"></div>
+        <div>
+          <h1>LXD Info System — WebGL Bundle</h1>
+          <p>weighted force graph · topology · encapsulation · rules · metrics</p>
+        </div>
+      </div>
+
+      <nav class="tabs">
+        <button data-view="graph" class="active">Graph</button>
+        <button data-view="mindmap">Mindmap</button>
+        <button data-view="relations">Relations</button>
+        <button data-view="encapsulation">Encapsulation</button>
+      </nav>
+
+      <div class="top-metrics">
+        <span id="fps-pill">-- FPS</span>
+        <button id="pause-btn" title="Space">Pause</button>
+        <button id="reset-btn" title="R">Reset</button>
+      </div>
+    </header>
+
+    <main id="stage-wrap">
+      <canvas id="gl-canvas"></canvas>
+      <canvas id="label-canvas"></canvas>
+
+      <aside id="left-panel" class="panel">
+        <h2>Node classes</h2>
+        <div id="legend"></div>
+
+        <h2>Info</h2>
+        <div class="kv"><span>Nodes</span><b id="node-count">0</b></div>
+        <div class="kv"><span>Edges</span><b id="edge-count">0</b></div>
+        <div class="kv"><span>Relations</span><b id="relation-count">0</b></div>
+        <div class="kv"><span>Selected</span><b id="selected-node">none</b></div>
+        <div class="kv"><span>Energy</span><b id="energy-label">0</b></div>
+
+        <div class="hint">
+          <b>Mouse</b>: drag orbit · wheel zoom · click select<br/>
+          <b>Keys</b>: WASD/QE · Space · R · F · L
+        </div>
+      </aside>
+
+      <aside id="right-panel" class="panel">
+        <h2>Rules</h2>
+
+        <label class="rule">
+          <span>Isomorphisme</span>
+          <input type="range" id="rule-isomorphism" min="0" max="1" step="0.01" value="0.74">
+          <b id="val-isomorphism">0.74</b>
+        </label>
+
+        <label class="rule">
+          <span>Commutativité</span>
+          <input type="range" id="rule-commutativity" min="0" max="1" step="0.01" value="0.58">
+          <b id="val-commutativity">0.58</b>
+        </label>
+
+        <label class="rule">
+          <span>Inflexion</span>
+          <input type="range" id="rule-inflexion" min="0" max="1" step="0.01" value="0.46">
+          <b id="val-inflexion">0.46</b>
+        </label>
+
+        <label class="rule">
+          <span>Poids</span>
+          <input type="range" id="rule-weight" min="0" max="1" step="0.01" value="0.86">
+          <b id="val-weight">0.86</b>
+        </label>
+
+        <label class="rule">
+          <span>Champs</span>
+          <input type="range" id="rule-fields" min="0" max="1" step="0.01" value="0.62">
+          <b id="val-fields">0.62</b>
+        </label>
+
+        <label class="rule">
+          <span>Interférence</span>
+          <input type="range" id="rule-interference" min="0" max="1" step="0.01" value="0.42">
+          <b id="val-interference">0.42</b>
+        </label>
+
+        <label class="rule">
+          <span>Bruit</span>
+          <input type="range" id="rule-noise" min="0" max="1" step="0.01" value="0.20">
+          <b id="val-noise">0.20</b>
+        </label>
+
+        <label class="toggle">
+          <input type="checkbox" id="toggle-forces" checked>
+          <span>Forces</span>
+        </label>
+
+        <label class="toggle">
+          <input type="checkbox" id="toggle-labels" checked>
+          <span>Labels</span>
+        </label>
+
+        <label class="toggle">
+          <input type="checkbox" id="toggle-orbits" checked>
+          <span>Orbits</span>
+        </label>
+
+        <label class="toggle">
+          <input type="checkbox" id="toggle-depth" checked>
+          <span>Depth grid</span>
+        </label>
+      </aside>
+
+      <section id="bottom-panel" class="panel">
+        <div class="layer-card member">
+          <b>Cluster Member</b>
+          <span>physical LXD member</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="layer-card vm">
+          <b>LXD Instance</b>
+          <span>VM / container isolation</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="layer-card guest">
+          <b>Guest Layer</b>
+          <span>OS, processes, bridges</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="layer-card service">
+          <b>Docker / Swarm</b>
+          <span>orchestration, agents</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="layer-card model">
+          <b>Model APIs</b>
+          <span>Ollama · Llama · MCP</span>
+        </div>
+      </section>
+
+      <section id="details-panel" class="panel">
+        <h2 id="details-title">No node selected</h2>
+        <pre id="details-body">Click a node to inspect topology, degree, class, role and edges.</pre>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

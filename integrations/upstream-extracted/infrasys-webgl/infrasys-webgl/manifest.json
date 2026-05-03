@@ -1,0 +1,15 @@
+{
+  "name": "lxd-info-system-webgl-bundle",
+  "type": "native-js-webgl",
+  "entry": "index.html",
+  "features": [
+    "webgl2 3d weighted force-directed graph",
+    "camera orbit / zoom / pan",
+    "gamepad controls",
+    "canvas 2d overlay labels",
+    "graph theory rules: isomorphism, commutativity, inflexion",
+    "fields / interference / noise",
+    "cluster topology dataset from LXD output"
+  ],
+  "run": "python3 -m http.server 8080"
+}

@@ -1,0 +1,20 @@
+*** Begin Patch
+*** Update File: bin/exosys.sh
+@@
+ LXD / LXC:
+   sudo ./bin/exosys.sh lxd-cluster-init <node>
+   sudo ./bin/exosys.sh lxd-cluster-join <node>
+   sudo ./bin/exosys.sh lxd-storage-apply
+   sudo ./bin/exosys.sh lxd-profiles-apply
++  sudo ./bin/exosys.sh lxd-vm-profile-launch <name> <profile> [host]
++  sudo ./bin/exosys.sh lxd-container-profile-launch <name> <profile> [host]
++  sudo ./bin/exosys.sh lxd-guest-bootstrap-ubuntu <guest>
+@@
+   lxd-cluster-init) require_root; "${REPO_ROOT}/modules/55-lxd-cluster-init.sh" "${2:-}" ;;
+   lxd-cluster-join) require_root; "${REPO_ROOT}/modules/56-lxd-cluster-join.sh" "${2:-}" ;;
+   lxd-storage-apply) require_root; "${REPO_ROOT}/modules/57-lxd-storage-apply.sh" ;;
+   lxd-profiles-apply) require_root; "${REPO_ROOT}/modules/58-lxd-profiles-apply.sh" ;;
++  lxd-vm-profile-launch) require_root; "${REPO_ROOT}/modules/44b-lxd-vm-profile-launch.sh" "${2:-}" "${3:-}" "${4:-}" ;;
++  lxd-container-profile-launch) require_root; "${REPO_ROOT}/modules/59-lxd-container-profile-launch.sh" "${2:-}" "${3:-}" "${4:-}" ;;
++  lxd-guest-bootstrap-ubuntu) require_root; "${REPO_ROOT}/modules/49b-lxd-guest-bootstrap-ubuntu.sh" "${2:-}" ;;
+*** End Patch

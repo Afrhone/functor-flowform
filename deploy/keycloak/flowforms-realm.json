@@ -1,0 +1,32 @@
+{
+  "realm": "flowforms",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "flowforms-api",
+      "enabled": true,
+      "publicClient": false,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "artist",
+      "enabled": true,
+      "email": "artist@example.local",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "flowforms",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}

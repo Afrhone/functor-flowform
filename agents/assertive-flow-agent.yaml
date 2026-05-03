@@ -1,0 +1,24 @@
+name: flowforms-assertive-agent
+version: 1.0.0
+stance: assertive-not-destructive
+principles:
+  - clarity_in_curve
+  - continuity_before_complexity
+  - dry_run_before_cluster_mutation
+  - identity_via_sso_not_shared_secrets
+  - evidence_logs_before_repair
+assertions:
+  glyph:
+    - C0 continuity must be preserved unless marked as punctuation
+    - total_contours <= 12
+    - handles must not generate curvature spikes above configured threshold
+    - family must be one of root, bridge, form, rhythm, nature, momentum, axiom
+  cluster:
+    - scripts default to DRY_RUN=1
+    - APPLY=1 required for Docker Swarm, firewall, LXD, libvirt mutations
+    - all env files must be copied from .example and reviewed
+mcp_tools:
+  - flowforms.listGlyphs
+  - flowforms.generateVariant
+  - flowforms.formalize
+  - cluster.plan

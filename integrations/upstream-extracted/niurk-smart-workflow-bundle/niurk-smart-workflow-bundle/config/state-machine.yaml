@@ -1,0 +1,122 @@
+machine: niurk_smart_workflow
+version: 2026.05.01
+default_mode: dry_run
+states:
+  INIT:
+    description: Bundle loaded, no assumptions accepted.
+    entry_checks:
+      - env_loaded
+      - lxc_binary_present
+  DISCOVERED:
+    description: Cluster, VM, container, Docker and endpoint inventory collected.
+    requires:
+      - lxc_cluster_list_success
+      - lxc_list_success
+  HANDSHAKEN:
+    description: Remote config plane can execute on source VM, target VM and AI host.
+    requires:
+      - lxd_exec_target_vm
+      - lxd_exec_source_vm
+      - lxd_exec_or_create_ai_container_possible
+      - ssh_or_lxd_identity_present
+  AUTH_VALIDATED:
+    description: Operator identity, namespace claim and optional FIDO assertion are coherent.
+    requires:
+      - operator_user_matches
+      - namespace_claim_matches
+      - fido_gate_if_required
+  TARGET_READY:
+    description: niurk-42 has runtime, env and project roots.
+    requires:
+      - target_vm_running
+      - target_vm_ip_known
+      - disk_free_threshold
+      - swap_pressure_under_threshold
+  AI_CONTAINER_READY:
+    description: LXD Ubuntu AI container exists on ark-rhiz with Docker Model Runner and vLLM ROCm path.
+    requires:
+      - ai_container_on_ark_rhiz
+      - docker_engine_ok
+      - docker_model_plugin_ok
+      - rocm_device_visible_or_warning
+      - vllm_rocm_compose_rendered
+  SERVICES_RENDERED:
+    description: Service env, compose, systemd and endpoint files rendered.
+    requires:
+      - target_env_written
+      - endpoint_map_written
+      - compose_candidates_discovered
+  SERVICES_DEPLOYED:
+    description: Selected target services are started on niurk-42 and AI endpoints are online.
+    requires:
+      - allow_deploy
+      - target_compose_ps_ok
+      - dmr_health_ok_or_warning
+      - vllm_health_ok_or_warning
+  VALIDATED:
+    description: Target passes health, endpoint, identity, namespace and pressure checks.
+    requires:
+      - no_critical_failed_systemd
+      - endpoint_validation_ok
+      - source_still_running
+      - target_response_ok
+  CUTOVER_READY:
+    description: Source can be stopped only if cutover token and source-stop gate are provided.
+    requires:
+      - validated
+      - allow_source_stop
+      - cutover_token_matches
+  CUTOVER_DONE:
+    description: Traffic/service authority moved to niurk-42.
+    requires:
+      - source_selected_services_stopped
+      - target_selected_services_running
+      - rollback_artifact_exists
+  ROLLBACK_READY:
+    description: Source inventory and target deploy state are recorded.
+    requires:
+      - source_inventory_tar
+      - target_inventory_tar
+      - state_json_written
+
+transitions:
+  - from: INIT
+    to: DISCOVERED
+    command: discover
+  - from: DISCOVERED
+    to: HANDSHAKEN
+    command: handshake
+  - from: HANDSHAKEN
+    to: AUTH_VALIDATED
+    command: auth
+  - from: AUTH_VALIDATED
+    to: TARGET_READY
+    command: integrate-vm
+  - from: TARGET_READY
+    to: AI_CONTAINER_READY
+    command: deploy-ai-container
+  - from: AI_CONTAINER_READY
+    to: SERVICES_RENDERED
+    command: render
+  - from: SERVICES_RENDERED
+    to: SERVICES_DEPLOYED
+    command: deploy-services
+  - from: SERVICES_DEPLOYED
+    to: VALIDATED
+    command: validate
+  - from: VALIDATED
+    to: CUTOVER_READY
+    command: cutover-check
+  - from: CUTOVER_READY
+    to: CUTOVER_DONE
+    command: cutover
+
+invariants:
+  - no_source_stop_without_ALLOW_SOURCE_STOP
+  - no_real_deploy_without_ALLOW_DEPLOY
+  - no_gpu_mutation_without_ALLOW_GPU_MUTATION
+  - no_vm_restart_without_ALLOW_VM_RESTART
+  - no_cutover_without_validation
+  - target_vm_must_be_on_target_node
+  - ai_container_must_be_on_ai_host_node
+  - k5000_must_not_be_target_for_modern_vllm

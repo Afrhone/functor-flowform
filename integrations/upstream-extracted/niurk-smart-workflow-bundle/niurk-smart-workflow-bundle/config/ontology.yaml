@@ -1,0 +1,64 @@
+ontology:
+  namespace: rhiz
+  root_identity: rhiz/niurk
+  entity_types:
+    host:
+      examples: [ark-rhiz, sigmo-rhiz, rhiz-ueth, rhiz-woute, factau-rhiz, umowt-rhiz]
+      identity_key: hostname
+      authority: lxd_cluster
+    vm:
+      examples: [niurk-19, niurk-21, niurk-42, niurk-72]
+      identity_key: lxd_instance_name
+      authority: lxd_cluster
+    container:
+      examples: [llama-gpu, niurk-ai-rocm, project-push]
+      identity_key: lxd_instance_name
+      authority: lxd_cluster
+    docker_service:
+      identity_key: docker_name
+      authority: docker_engine_inside_instance
+    endpoint:
+      identity_key: scheme_host_port_path
+      authority: target_env
+    model:
+      identity_key: model_name_or_path
+      authority: ai_container_runtime
+    gpu:
+      identity_key: pci_or_render_node
+      authority: physical_host
+    credential:
+      identity_key: ssh_fido_sk_or_ca_principal
+      authority: operator_auth
+    storage:
+      identity_key: pool_or_mount_name
+      authority: lxd_storage_or_host_mount
+
+  namespace_claims:
+    cluster: rhiz/lxd-cluster
+    host_ark: rhiz/host/ark-rhiz
+    vm_target: rhiz/vm/niurk-42
+    vm_source: rhiz/vm/niurk-21
+    container_ai: rhiz/container/niurk-ai-rocm
+    services: rhiz/services
+    models: rhiz/models
+    auth: rhiz/auth
+
+coherence_rules:
+  - id: host_local_gpu
+    rule: A physical GPU can only be assigned to an instance on the same physical host.
+    consequence: K5000 on another host cannot accelerate niurk-42 on ark-rhiz.
+  - id: vm_identity
+    rule: A VM identity is LXD instance name plus cluster location plus instance UUID.
+    consequence: Same IP alone is not identity.
+  - id: endpoint_identity
+    rule: Endpoint identity is base URL plus protocol plus namespace claim.
+    consequence: Updating OPENAI_BASE_URL requires validation before service authority moves.
+  - id: secret_non_export
+    rule: FIDO private keys and OAuth secrets are never copied by the automation.
+    consequence: Bundle ships only examples and file-path references.
+  - id: cutover_authority
+    rule: Source remains authoritative until target validation and explicit cutover token.
+    consequence: No automatic source stop in default flow.
+  - id: model_runtime_fit
+    rule: Model runtime must fit hardware capability.
+    consequence: Modern vLLM goes to Radeon/ROCm, not Quadro K5000.

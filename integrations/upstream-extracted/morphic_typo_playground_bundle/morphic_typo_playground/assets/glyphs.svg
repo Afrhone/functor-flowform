@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="620" viewBox="0 0 820 620">
+  <defs>
+  <symbol id="zeta-kite" viewBox="0 0 128 128">
+    <title>Zeta Kite</title>
+    <path d="M 80.64 12.80 C 78.29 13.62, 58.79 19.41, 55.04 21.76 C 51.29 24.11, 41.21 35.35, 39.68 38.40 C 38.15 41.45, 37.11 52.46, 38.40 55.04 C 39.69 57.62, 52.35 65.50, 53.76 66.56" />
+    <path d="M 80.64 12.80 C 81.70 11.98, 89.93 4.78, 92.16 3.84 C 94.39 2.90, 104.49 1.74, 104.96 2.56 C 105.43 3.38, 100.10 10.92, 97.28 12.80 C 94.46 14.68, 76.35 22.10, 74.24 23.04" />
+  </symbol>
+  <symbol id="iota-root" viewBox="0 0 128 128">
+    <title>Iota Root</title>
+    <path d="M 69.12 10.24 C 70.29 11.18, 81.10 18.13, 81.92 20.48 C 82.74 22.83, 79.96 33.38, 78.08 35.84 C 76.20 38.30, 64.49 45.60, 61.44 47.36 C 58.39 49.12, 46.33 54.34, 44.80 55.04" />
+    <path d="M 61.44 47.36 C 62.50 48.77, 72.02 59.79, 72.96 62.72 C 73.90 65.65, 73.79 76.07, 71.68 79.36 C 69.57 82.65, 53.91 95.98, 49.92 98.56 C 45.93 101.14, 30.15 106.70, 28.16 107.52" />
+  </symbol>
+  <symbol id="phi-orbit" viewBox="0 0 128 128">
+    <title>Phi Orbit</title>
+    <path d="M 65.28 12.80 C 65.28 22.19, 65.28 105.81, 65.28 115.20" />
+    <path d="M 30.72 69.12 C 31.66 66.77, 37.56 46.34, 40.96 43.52 C 44.36 40.70, 63.26 37.46, 67.84 38.40 C 72.42 39.34, 88.18 50.47, 90.88 53.76 C 93.58 57.05, 97.87 70.72, 97.28 74.24 C 96.69 77.76, 88.12 90.52, 84.48 92.16 C 80.84 93.80, 61.82 93.33, 57.60 92.16 C 53.38 90.99, 40.86 81.47, 38.40 79.36 C 35.94 77.25, 31.42 70.06, 30.72 69.12" />
+    <path d="M 29.44 70.40 C 36.01 70.40, 94.55 70.40, 101.12 70.40" />
+  </symbol>
+  <symbol id="lambda-wing" viewBox="0 0 128 128">
+    <title>Lambda Wing</title>
+    <path d="M 51.20 10.24 C 52.14 12.59, 59.91 31.15, 61.44 35.84 C 62.97 40.53, 67.84 56.75, 67.84 61.44 C 67.84 66.13, 63.55 82.35, 61.44 87.04 C 59.33 91.73, 46.33 110.29, 44.80 112.64" />
+    <path d="M 66.56 57.60 C 67.97 56.19, 79.34 44.94, 81.92 42.24 C 84.50 39.54, 93.55 29.45, 94.72 28.16" />
+    <path d="M 57.60 89.60 C 58.89 91.01, 68.75 103.08, 71.68 104.96 C 74.61 106.84, 87.96 109.61, 89.60 110.08" />
+  </symbol>
+  <symbol id="rho-seed" viewBox="0 0 128 128">
+    <title>Rho Seed</title>
+    <path d="M 64.00 64.00 C 64.35 63.77, 67.25 61.44, 67.84 61.44 C 68.43 61.44, 70.40 63.41, 70.40 64.00 C 70.40 64.59, 68.43 67.84, 67.84 67.84 C 67.25 67.84, 64.35 64.35, 64.00 64.00" />
+    <path d="M 64.00 42.24 C 65.99 42.24, 82.59 40.25, 85.76 42.24 C 88.93 44.23, 98.56 60.01, 98.56 64.00 C 98.56 67.99, 88.93 83.77, 85.76 85.76 C 82.59 87.75, 67.99 85.76, 64.00 85.76 C 60.01 85.76, 45.41 87.75, 42.24 85.76 C 39.07 83.77, 29.44 67.99, 29.44 64.00 C 29.44 60.01, 39.07 44.23, 42.24 42.24 C 45.41 40.25, 62.01 42.24, 64.00 42.24" />
+    <path d="M 64.00 23.04 C 67.87 23.04, 100.84 19.29, 106.24 23.04 C 111.64 26.79, 122.88 56.49, 122.88 64.00 C 122.88 71.51, 111.64 101.21, 106.24 104.96 C 100.84 108.71, 71.74 104.96, 64.00 104.96 C 56.26 104.96, 27.16 108.71, 21.76 104.96 C 16.36 101.21, 5.12 71.51, 5.12 64.00 C 5.12 56.49, 16.36 26.79, 21.76 23.04 C 27.16 19.29, 60.13 23.04, 64.00 23.04" />
+  </symbol>
+  <symbol id="fiph-flow" viewBox="0 0 128 128">
+    <title>FiPh Flow</title>
+    <path d="M 70.40 8.96 C 69.81 10.95, 64.70 26.61, 64.00 30.72 C 63.30 34.83, 62.13 49.54, 62.72 53.76 C 63.31 57.98, 68.29 72.93, 70.40 76.80 C 72.51 80.67, 83.06 92.48, 85.76 96.00 C 88.46 99.52, 98.55 113.44, 99.84 115.20" />
+    <path d="M 89.60 15.36 C 87.84 17.24, 73.80 32.20, 70.40 35.84 C 67.00 39.48, 54.83 51.29, 52.48 55.04 C 50.13 58.79, 45.15 73.28, 44.80 76.80 C 44.45 80.32, 46.88 91.33, 48.64 93.44 C 50.40 95.55, 61.18 99.96, 64.00 99.84 C 66.82 99.72, 77.60 94.51, 79.36 92.16 C 81.12 89.81, 83.67 77.64, 83.20 74.24 C 82.73 70.84, 76.70 58.21, 74.24 55.04 C 71.78 51.87, 59.84 42.26, 56.32 39.68 C 52.80 37.10, 37.72 28.05, 35.84 26.88" />
+    <path d="M 39.68 60.16 C 45.08 60.16, 93.16 60.16, 98.56 60.16" />
+  </symbol>
+  <symbol id="mu-vessel" viewBox="0 0 128 128">
+    <title>Mu Vessel</title>
+    <path d="M 25.60 38.40 C 26.42 41.57, 32.68 68.27, 34.56 72.96 C 36.44 77.65, 43.73 89.25, 46.08 89.60 C 48.43 89.95, 58.28 80.55, 60.16 76.80 C 62.04 73.05, 65.97 51.22, 66.56 48.64" />
+    <path d="M 66.56 48.64 C 67.62 51.46, 75.62 75.61, 78.08 79.36 C 80.54 83.11, 90.98 91.71, 93.44 89.60 C 95.90 87.49, 103.90 59.37, 104.96 56.32" />
+  </symbol>
+  <symbol id="vi-hook" viewBox="0 0 128 128">
+    <title>Vi Hook</title>
+    <path d="M 60.16 21.76 C 60.63 23.52, 65.75 37.44, 65.28 40.96 C 64.81 44.48, 57.50 56.99, 55.04 60.16 C 52.58 63.33, 40.63 72.12, 38.40 75.52 C 36.17 78.92, 30.13 93.88, 30.72 97.28 C 31.31 100.68, 43.51 111.23, 44.80 112.64" />
+    <path d="M 61.44 25.60 C 62.97 24.19, 74.79 11.18, 78.08 10.24 C 81.37 9.30, 94.93 13.13, 97.28 15.36 C 99.63 17.59, 103.09 32.80, 103.68 34.56" />
+  </symbol>
+  <symbol id="psi-anchor" viewBox="0 0 128 128">
+    <title>Psi Anchor</title>
+    <path d="M 64.00 10.24 C 64.00 19.86, 64.00 105.58, 64.00 115.20" />
+    <path d="M 64.00 44.80 C 62.24 42.81, 48.32 23.86, 44.80 23.04 C 41.28 22.22, 27.13 32.32, 25.60 35.84 C 24.07 39.36, 26.17 57.69, 28.16 61.44 C 30.15 65.19, 43.84 75.98, 47.36 76.80 C 50.88 77.62, 64.80 70.99, 66.56 70.40" />
+    <path d="M 64.00 46.08 C 66.11 44.67, 83.75 30.72, 87.04 30.72 C 90.33 30.72, 99.14 42.79, 99.84 46.08 C 100.54 49.37, 95.19 64.68, 94.72 66.56" />
+  </symbol>
+  <symbol id="braid-wave" viewBox="0 0 128 128">
+    <title>Braid Wave</title>
+    <path d="M 12.80 104.96 C 13.74 101.44, 22.81 72.43, 23.04 66.56 C 23.27 60.69, 14.42 43.78, 15.36 40.96 C 16.30 38.14, 30.82 33.96, 33.28 35.84 C 35.74 37.72, 42.47 55.34, 42.24 61.44 C 42.01 67.54, 33.18 97.71, 30.72 102.40 C 28.26 107.09, 16.77 111.70, 15.36 112.64" />
+    <path d="M 32.00 104.96 C 32.94 101.21, 42.01 70.10, 42.24 64.00 C 42.47 57.90, 33.50 41.10, 34.56 38.40 C 35.62 35.70, 51.18 32.45, 53.76 34.56 C 56.34 36.67, 62.95 55.22, 62.72 61.44 C 62.49 67.66, 53.78 97.59, 51.20 102.40 C 48.62 107.21, 36.09 112.86, 34.56 113.92" />
+    <path d="M 51.20 104.96 C 52.37 100.97, 63.18 67.66, 64.00 61.44 C 64.82 55.22, 58.75 39.82, 60.16 37.12 C 61.57 34.42, 76.90 30.12, 79.36 32.00 C 81.82 33.88, 87.51 51.50, 87.04 57.60 C 86.57 63.70, 77.06 93.28, 74.24 98.56 C 71.42 103.84, 57.96 113.67, 56.32 115.20" />
+    <path d="M 78.08 97.28 C 79.61 95.52, 92.02 82.07, 94.72 78.08 C 97.42 74.09, 105.29 58.81, 107.52 53.76 C 109.75 48.71, 117.98 25.86, 119.04 23.04" />
+    <path d="M 93.44 102.40 C 94.73 100.17, 105.17 82.30, 107.52 78.08 C 109.87 73.86, 117.98 58.31, 119.04 56.32" />
+    <path d="M 108.80 108.80 C 109.62 107.04, 116.35 93.00, 117.76 89.60 C 119.17 86.20, 123.57 73.32, 124.16 71.68" />
+  </symbol>
+  <symbol id="sigma-arch" viewBox="0 0 128 128">
+    <title>Sigma Arch</title>
+    <path d="M 23.04 92.16 C 24.57 89.23, 35.69 65.91, 39.68 60.16 C 43.67 54.41, 61.16 31.79, 66.56 29.44 C 71.96 27.09, 94.69 32.68, 98.56 34.56 C 102.43 36.44, 108.92 46.52, 108.80 49.92 C 108.68 53.32, 98.34 69.69, 97.28 71.68" />
+  </symbol>
+  <symbol id="bracket-gate" viewBox="0 0 128 128">
+    <title>Bracket Gate</title>
+    <path d="M 38.40 12.80 C 43.33 12.80, 87.23 3.41, 92.16 12.80 C 97.09 22.19, 97.09 105.81, 92.16 115.20 C 87.23 124.59, 43.33 115.20, 38.40 115.20" />
+    <path d="M 38.40 64.00 C 43.33 64.00, 87.23 64.00, 92.16 64.00" />
+  </symbol>
+  </defs>
+  <rect width="100%" height="100%" fill="#fff8ee"/>
+  <circle cx="650" cy="70" r="180" fill="#dffdf1" opacity="0.65"/>
+  <circle cx="130" cy="500" r="220" fill="#f7f1ff" opacity="0.75"/>
+  <text x="40" y="34" font-family="ui-rounded, system-ui, sans-serif" font-size="22" font-weight="800" fill="#141022">Morphic Symbol Deck</text>
+  <g><g transform="translate(40,60)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#zeta-kite" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Zeta Kite</text>
+  </g>
+<g transform="translate(220,60)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#iota-root" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Iota Root</text>
+  </g>
+<g transform="translate(400,60)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#phi-orbit" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Phi Orbit</text>
+  </g>
+<g transform="translate(580,60)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#lambda-wing" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Lambda Wing</text>
+  </g>
+<g transform="translate(40,240)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#rho-seed" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Rho Seed</text>
+  </g>
+<g transform="translate(220,240)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#fiph-flow" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">FiPh Flow</text>
+  </g>
+<g transform="translate(400,240)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#mu-vessel" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Mu Vessel</text>
+  </g>
+<g transform="translate(580,240)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#vi-hook" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Vi Hook</text>
+  </g>
+<g transform="translate(40,420)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#psi-anchor" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Psi Anchor</text>
+  </g>
+<g transform="translate(220,420)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#braid-wave" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Braid Wave</text>
+  </g>
+<g transform="translate(400,420)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#sigma-arch" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Sigma Arch</text>
+  </g>
+<g transform="translate(580,420)">
+    <rect x="-18" y="-18" width="164" height="164" rx="24" fill="white" opacity="0.55"/>
+    <use href="#bracket-gate" fill="none" stroke="#141022" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="154" font-family="ui-rounded, system-ui, sans-serif" font-size="15" fill="#665f76">Bracket Gate</text>
+  </g></g>
+</svg>

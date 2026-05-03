@@ -1,0 +1,292 @@
+:root {
+  color-scheme: light;
+  --ink: #141022;
+  --muted: #665f76;
+  --paper: #fff8ee;
+  --paper-2: #f7f1ff;
+  --mint: #dffdf1;
+  --violet: #9f7aea;
+  --gold: #ffd166;
+  --line: rgba(20, 16, 34, .14);
+  --shadow: 0 20px 60px rgba(37, 24, 64, .16);
+  --radius-xl: 28px;
+  --radius-md: 16px;
+  font-family: ui-rounded, "SF Pro Rounded", "Avenir Next", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 209, 102, .36), transparent 24rem),
+    radial-gradient(circle at 88% 18%, rgba(129, 244, 201, .42), transparent 28rem),
+    linear-gradient(135deg, var(--paper), var(--paper-2) 54%, #eafff7);
+  overflow-x: hidden;
+}
+
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px clamp(18px, 4vw, 56px) 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+  gap: 28px;
+  align-items: end;
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  padding: .38rem .7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .54);
+  backdrop-filter: blur(18px);
+  color: var(--muted);
+  font-size: .85rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(2.4rem, 7vw, 7.4rem);
+  line-height: .86;
+  letter-spacing: -.08em;
+  font-weight: 850;
+  max-width: 10ch;
+}
+
+.hero p {
+  max-width: 68ch;
+  font-size: clamp(1.02rem, 1.45vw, 1.22rem);
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.hero-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: rgba(255,255,255,.52);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  min-height: 280px;
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  backdrop-filter: blur(18px);
+}
+
+#specimen svg { width: 100%; display: block; }
+#source { font-size: .95rem; color: var(--muted); line-height: 1.45; }
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto 64px;
+  padding: 0 clamp(18px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 22px;
+}
+
+.panel, .stage-shell, .notes {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: rgba(255,255,255,.58);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px);
+}
+
+.panel {
+  padding: 20px;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.panel h2, .notes h2 {
+  font-size: 1rem;
+  margin: 0;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.control {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: .94rem;
+  color: var(--ink);
+  font-weight: 680;
+}
+
+select, button, input[type="range"] {
+  font: inherit;
+}
+
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.72);
+  padding: 12px 14px;
+  color: var(--ink);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--violet);
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.toggle input { width: 18px; height: 18px; accent-color: var(--violet); }
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+button {
+  border: 0;
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #171124;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(23, 17, 36, .16);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+button.secondary {
+  background: rgba(20,16,34,.08);
+  color: var(--ink);
+  box-shadow: none;
+  border: 1px solid var(--line);
+}
+button:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(23,17,36,.18); }
+button:active { transform: translateY(0); }
+
+#readout {
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.6);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .86rem;
+  color: var(--muted);
+}
+
+.stage-shell {
+  min-height: 720px;
+  overflow: hidden;
+  position: relative;
+}
+
+#stage {
+  display: block;
+  width: 100%;
+  height: 720px;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.ribbon {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.64);
+  color: var(--muted);
+  font-size: .86rem;
+  pointer-events: none;
+}
+.ribbon::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 6px rgba(255,209,102,.28);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.glyph-card {
+  min-height: 86px;
+  padding: 10px;
+  background: rgba(255,255,255,.62);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: none;
+  display: grid;
+  align-content: center;
+  gap: 4px;
+}
+.glyph-card:hover { box-shadow: none; }
+.glyph-card.active {
+  border-color: rgba(159, 122, 234, .72);
+  background: linear-gradient(145deg, rgba(159, 122, 234, .16), rgba(255,255,255,.68));
+}
+.glyph-mark {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 780;
+}
+.glyph-card small {
+  color: var(--muted);
+  font-size: .73rem;
+  line-height: 1.1;
+}
+
+.notes {
+  max-width: 1280px;
+  margin: 0 auto 80px;
+  padding: 24px clamp(18px, 4vw, 56px);
+  display: grid;
+  gap: 14px;
+}
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.note {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px;
+  background: rgba(255,255,255,.48);
+}
+.note h3 { margin: 0 0 8px; font-size: 1rem; }
+.note p { margin: 0; color: var(--muted); line-height: 1.5; }
+
+@media (max-width: 920px) {
+  .hero, .app, .notes-grid { grid-template-columns: 1fr; }
+  .stage-shell, #stage { min-height: 560px; height: 560px; }
+}

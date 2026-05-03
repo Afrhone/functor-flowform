@@ -1,0 +1,2 @@
+export function assertGlyph(g){const issues=[]; if(!g.family) issues.push('missing family'); if(!Array.isArray(g.strokes)||!g.strokes.length) issues.push('missing strokes'); if((g.strokes||[]).length>12) issues.push('too many contours; split as ligature'); return {ok:!issues.length,issues};}
+export function assertClusterEnv(env){const issues=[]; if(env.APPLY==='1' && !env.FLOWFORMS_DOMAIN) issues.push('FLOWFORMS_DOMAIN required when APPLY=1'); if(!env.OIDC_ISSUER) issues.push('OIDC_ISSUER not set; dev SSO mode only'); return {ok:!issues.length,issues};}

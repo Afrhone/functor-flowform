@@ -1,0 +1,9 @@
+[Unit]
+Description=Niurk stack health validation
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/opt/niurk-directives/ai-endpoints.env
+ExecStart=/opt/niurk-directives/healthcheck.sh

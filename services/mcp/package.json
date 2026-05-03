@@ -1,0 +1,8 @@
+{
+  "name": "flowforms-mcp-lite",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node flowforms-mcp.js"
+  }
+}

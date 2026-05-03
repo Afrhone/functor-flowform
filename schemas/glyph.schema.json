@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flowforms.local/schemas/glyph.schema.json",
+  "type": "object",
+  "required": [
+    "char",
+    "family",
+    "strokes"
+  ],
+  "properties": {
+    "char": {
+      "type": "string"
+    },
+    "family": {
+      "enum": [
+        "root",
+        "bridge",
+        "form",
+        "rhythm",
+        "nature",
+        "momentum",
+        "axiom"
+      ]
+    },
+    "strokes": {
+      "type": "array"
+    },
+    "dots": {
+      "type": "array"
+    }
+  }
+}

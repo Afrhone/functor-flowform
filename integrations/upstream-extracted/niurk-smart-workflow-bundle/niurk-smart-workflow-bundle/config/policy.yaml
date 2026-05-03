@@ -1,0 +1,26 @@
+safety:
+  dry_run_default: true
+  destructive_requires:
+    - ALLOW_DEPLOY=1
+    - DRY_RUN=0
+  source_stop_requires:
+    - ALLOW_SOURCE_STOP=1
+    - CUTOVER_TOKEN=cutover-niurk-21-to-niurk-42
+    - state=VALIDATED
+  vm_restart_requires:
+    - ALLOW_VM_RESTART=1
+  gpu_mutation_requires:
+    - ALLOW_GPU_MUTATION=1
+
+thresholds:
+  max_iowait_pct: 30
+  max_swap_used_pct: 50
+  min_target_free_gib: 4
+  max_load_per_cpu: 2.5
+
+hard_constraints:
+  - k5000_not_modern_vllm_target
+  - source_services_not_stopped_by_default
+  - secrets_not_embedded
+  - fido_private_material_not_copied
+  - project_files_not_overwritten

@@ -1,0 +1,86 @@
+observed_from_user_docker_ps:
+  context: niurk-24_or_niurk-19_guest
+  policy: classify_before_migration
+  critical_notes:
+    - vllm CPU containers are restart-looping with status 132 and should not be migrated as-is.
+    - nginx edge containers in restart loops should be rendered and validated before becoming authoritative.
+    - databases must be snapshotted/exported before cutover.
+    - project files are assumed already present on niurk-42.
+
+service_classes:
+  ai_crash_loop_do_not_autostart:
+    - singularity-heretic-llm-1
+    - singularity-personaplex-llm-1
+    - kobalt-datasci-vllm
+  ai_cpu_legacy:
+    - singularity-kobalt-sigma-1
+    - singularity-bitnet-bi-1
+  edge_or_gateway:
+    - kobalt-edge-router
+    - rhiz-nginx-edge-https
+    - deploy-umowt-nginx-1
+    - rhiz-ueht-webapp
+    - phi_nginx
+  auth:
+    - kobalt-auth
+  databases:
+    - filthy-phi-mongo
+    - kobalt-mongo
+    - spectra-mongo
+    - uniphil_mongo
+    - urbx-mongo
+    - deploy-umowt-mongo-1
+    - esprit-mongo
+    - niurk-postgres-1
+    - deploy-postgres-1
+    - phi_mongo
+    - arquolab_mongo
+    - fizzy-ki-mongo-1
+    - aligonde-web-mongo-1
+    - akatsuki-cms-mongo-1
+  application_services:
+    - singularity-app-1
+    - kobalt-web-ui
+    - kobalt-web-cli
+    - kobalt-gateway
+    - phi_app
+    - filthy-phi-app
+    - spectra-backend
+    - spectra-frontend
+    - phi_storage
+    - urbx-backend
+    - urbx-frontend
+    - urbx-storage
+    - uniphil_app
+    - uniphil_brain
+    - factory_app
+    - niurk-web-1
+    - niurk-server-1
+    - niurk-wallet-manager-1
+    - niurk-hardhat-1
+    - deploy-wallet-manager-1
+    - arquolab_web
+    - arquolab_api
+    - hypergraph_api
+    - factory_solids
+    - fizzy-ki-fizzy-ki-api-1
+    - fizzy-ki-fizzy-ki-web-1
+
+migration_policy:
+  start_order:
+    - databases
+    - storage_apis
+    - model_endpoints
+    - internal_apis
+    - web_frontends
+    - edge_gateways
+  stop_order_after_cutover:
+    - edge_gateways
+    - web_frontends
+    - internal_apis
+    - model_endpoints
+    - storage_apis
+    - databases
+  never_blindly_restart:
+    - ai_crash_loop_do_not_autostart
+    - edge_or_gateway

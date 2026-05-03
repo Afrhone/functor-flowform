@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  web:
+    image: ${FLOWFORMS_WEB_IMAGE:-flowforms-web:latest}
+    ports:
+      - target: 80
+        published: ${WEB_PORT:-8080}
+        protocol: tcp
+        mode: ingress
+    networks: [flowforms]
+    deploy:
+      replicas: ${WEB_REPLICAS:-2}
+      update_config: {order: start-first}
+  api:
+    image: ${FLOWFORMS_API_IMAGE:-flowforms-api:latest}
+    environment:
+      PORT: 8080
+      SSO_MODE: ${SSO_MODE:-dev}
+      OIDC_ISSUER: ${OIDC_ISSUER:-}
+      OIDC_AUDIENCE: ${OIDC_AUDIENCE:-flowforms-api}
+    volumes:
+      - flowforms-data:/data
+    networks: [flowforms]
+    deploy:
+      replicas: ${API_REPLICAS:-1}
+  mcp:
+    image: ${FLOWFORMS_MCP_IMAGE:-flowforms-mcp:latest}
+    networks: [flowforms]
+    deploy:
+      replicas: 1
+networks:
+  flowforms:
+    driver: overlay
+    attachable: true
+volumes:
+  flowforms-data:

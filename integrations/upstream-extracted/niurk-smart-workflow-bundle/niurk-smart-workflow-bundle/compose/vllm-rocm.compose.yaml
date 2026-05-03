@@ -1,0 +1,39 @@
+services:
+  vllm-rocm:
+    image: vllm/vllm-openai-rocm:latest
+    container_name: vllm-rocm
+    restart: unless-stopped
+    ports:
+      - "${VLLM_PORT:-8000}:8000"
+    ipc: host
+    group_add:
+      - video
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    volumes:
+      - "${CONTAINER_MODEL_DIR:-/models}:/models"
+      - hf-cache:/root/.cache/huggingface
+    environment:
+      HF_TOKEN: "${HF_TOKEN:-}"
+      HUGGING_FACE_HUB_TOKEN: "${HF_TOKEN:-}"
+      # Uncomment for specific AMD cards if ROCm requires it.
+      # HSA_OVERRIDE_GFX_VERSION: "11.0.0"
+    command:
+      - --model
+      - "${VLLM_MODEL:-Qwen/Qwen2.5-Coder-1.5B-Instruct}"
+      - --host
+      - "0.0.0.0"
+      - --port
+      - "8000"
+      - --max-model-len
+      - "${VLLM_MAX_MODEL_LEN:-4096}"
+      - --gpu-memory-utilization
+      - "${VLLM_GPU_MEMORY_UTILIZATION:-0.82}"
+
+volumes:
+  hf-cache:

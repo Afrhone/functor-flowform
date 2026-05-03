@@ -1,0 +1,39 @@
+directive: niurk_smart_workflow
+intent: migrate_and_integrate_services_without_source_stop
+default_mode: dry_run
+flow:
+  - status
+  - discover
+  - check
+  - handshake
+  - auth
+  - render
+  - deploy-ai-container
+  - integrate-vm
+  - deploy-services
+  - validate
+  - cutover-check
+  - cutover
+guards:
+  no_source_stop_by_default: true
+  no_gpu_mutation_by_default: true
+  no_secret_copy: true
+  no_blind_compose_deploy: true
+target:
+  vm: niurk-42
+  host: ark-rhiz
+  ai_container: niurk-ai-rocm
+source:
+  vm: niurk-21
+  observed_host: rhiz-ueth
+  alternate_user_claimed_host: sigmo-rhiz
+ai:
+  existing_container: llama-gpu
+  new_container: niurk-ai-rocm
+  runtime:
+    docker_model_runner:
+      backend: llama.cpp
+      gpu: rocm
+    vllm:
+      image: vllm/vllm-openai-rocm
+      endpoint: /v1

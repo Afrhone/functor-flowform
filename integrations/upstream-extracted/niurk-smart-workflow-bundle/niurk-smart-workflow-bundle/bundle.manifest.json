@@ -1,0 +1,213 @@
+{
+  "name": "niurk-smart-workflow-bundle",
+  "created_utc": "2026-04-30T22:33:26.643168+00:00",
+  "version": "2026.05.01-smart-workflow",
+  "source_context": {
+    "cluster_nodes": [
+      "ark-rhiz",
+      "factau-rhiz",
+      "rhiz-ueth",
+      "rhiz-woute",
+      "sigmo-rhiz",
+      "umowt-rhiz"
+    ],
+    "source_vm": "niurk-21",
+    "source_observed_node": "rhiz-ueth",
+    "source_user_claimed_node": "sigmo-rhiz",
+    "target_vm": "niurk-42",
+    "target_node": "ark-rhiz",
+    "ai_host": "ark-rhiz",
+    "ai_container": "niurk-ai-rocm",
+    "existing_llama_gpu": "llama-gpu"
+  },
+  "bash_syntax_check": {
+    "bin/niurk-flow.sh": 0,
+    "bin/system-check.sh": 0,
+    "bin/service-inventory.sh": 0,
+    "bin/remote-handshake.sh": 0,
+    "bin/render-compose.sh": 0,
+    "bin/deploy-ai-container.sh": 0,
+    "bin/integrate-vm.sh": 0,
+    "bin/validate.sh": 0,
+    "bin/state-machine.sh": 0,
+    "bin/logical-heuristics.sh": 0,
+    "bin/lib/niurk-lib.sh": 0
+  },
+  "files": [
+    {
+      "path": "Makefile",
+      "size": 421,
+      "sha256": "d23b5fd96dff861746ac254674ac4925d2b2f8230c506c5060211dde54f1c004"
+    },
+    {
+      "path": "README.md",
+      "size": 4898,
+      "sha256": "ff38b9c2afcd88790511616ba8905992a18fdac72f53ed389314ba23a04ac4b0"
+    },
+    {
+      "path": "bin/deploy-ai-container.sh",
+      "size": 4038,
+      "sha256": "5d7300cf3b62f92ff33dc3ceec76b4775fa40f625aa42c7f8bbe2413ea333921"
+    },
+    {
+      "path": "bin/integrate-vm.sh",
+      "size": 3175,
+      "sha256": "947f4fb1f9a5ed84e6c73ec7559bc9ec62e0217c468afcd44427755c5358cacc"
+    },
+    {
+      "path": "bin/lib/niurk-lib.sh",
+      "size": 3232,
+      "sha256": "d05294698e487ad0fec6b7ad5456cee41f50742fcabae6d3e1a554abe8f7014a"
+    },
+    {
+      "path": "bin/logical-heuristics.sh",
+      "size": 1542,
+      "sha256": "e078470a75d0af0fb530ac220144abb6df8899ad2a130ccdc537096da81526cf"
+    },
+    {
+      "path": "bin/niurk-flow.sh",
+      "size": 2605,
+      "sha256": "ba02878c9cbe0a118941577fcb750e02b2e71dbd9aaa7454cfe553385e151a87"
+    },
+    {
+      "path": "bin/remote-handshake.sh",
+      "size": 1860,
+      "sha256": "33aabd6916571f5b2e4d6c983a9051b2ce63a1699c0809aa2cb154c4de3cd797"
+    },
+    {
+      "path": "bin/render-compose.sh",
+      "size": 1395,
+      "sha256": "64c98f876901da163f047c1d6d0a3817193cf1513b1066a9e28fe5384de1fd3d"
+    },
+    {
+      "path": "bin/service-inventory.sh",
+      "size": 2304,
+      "sha256": "64d574705cd66dde8635143710adc3d2e88c6327c35f6c8d0e1fdfbd78d1585e"
+    },
+    {
+      "path": "bin/state-machine.sh",
+      "size": 1277,
+      "sha256": "9ab39bd3098ae2078f17f7a2030f91be1cd49fd89859c08cdc6f7a0e6a9b3694"
+    },
+    {
+      "path": "bin/system-check.sh",
+      "size": 2594,
+      "sha256": "95f04a6a3059267483487ebbc535031a5870d2742bc4f0de0350102f554f32ca"
+    },
+    {
+      "path": "bin/validate.sh",
+      "size": 1487,
+      "sha256": "ad646c3177a48666157199c3ee0055ec03cf72886f1de3034714e2ce6b94c350"
+    },
+    {
+      "path": "compose/intuitive-ai-gateway.compose.yaml",
+      "size": 291,
+      "sha256": "b259f5907f1088fac1f9ddb19f88b208ec042f64463fc8d6057d16bf3ff10080"
+    },
+    {
+      "path": "compose/nginx.conf",
+      "size": 552,
+      "sha256": "0528aeda2d884b07d7a8689291e8e232d912a4607ed1ff0a6698044d25fddf53"
+    },
+    {
+      "path": "compose/vllm-rocm.compose.yaml",
+      "size": 970,
+      "sha256": "4d3cfb8f7e33d5809dee750db392ec06f6e3f78d4fe97f11ace25a73bd49e9e9"
+    },
+    {
+      "path": "config/ontology.yaml",
+      "size": 2366,
+      "sha256": "832f17e1c2be6594f0fa77798064df721daf2993d5ad22f1962bd18c600ece3b"
+    },
+    {
+      "path": "config/policy.yaml",
+      "size": 612,
+      "sha256": "fff83cff663ca412b1e61ebd363174e62bccb1e2b49875b89d39dcbd22a05bcf"
+    },
+    {
+      "path": "config/service-map.yaml",
+      "size": 2120,
+      "sha256": "31ee84352f26dd5f8c87495bd690776204a814630b231f5ec5db76fca907d392"
+    },
+    {
+      "path": "config/state-machine.yaml",
+      "size": 3707,
+      "sha256": "3d2eb7dc61a3775bafe6b0978374723598dd39e394d04769d7f8e2e89d9d9581"
+    },
+    {
+      "path": "directives/SMART-WORKFLOW.yaml",
+      "size": 794,
+      "sha256": "4515206ad8adc84dfab2639723c53fc9acd50e7c1b06c683271acce985b7f0a5"
+    },
+    {
+      "path": "docs/AXIOMS-HEURISTICS.md",
+      "size": 2884,
+      "sha256": "6927f34ac91e0b9bbc0b0cd462d3c0e422063970601970d4c756dd86ccabf6e6"
+    },
+    {
+      "path": "docs/K5000-LEGACY-GPU.md",
+      "size": 1041,
+      "sha256": "74c7ce189fa0f1dcd529051632933c827bbbd5e886f2cc46379407599fa1fbe9"
+    },
+    {
+      "path": "docs/ROLLBACK.md",
+      "size": 868,
+      "sha256": "fabfdc1648a8fd22ca542e83144d4d497ed43f29b15323418c92c304f4a10c15"
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "size": 1864,
+      "sha256": "a64ee4130bf639ce18a6104d8d50844b30d4d0f1f0141d83c47f0fa682ac31e8"
+    },
+    {
+      "path": "docs/SECURITY-FIDO-AUTH.md",
+      "size": 1149,
+      "sha256": "3f5935c1618dd51e7fdab2f84e9767254a32a78b4ea09936f08cd03465e1733b"
+    },
+    {
+      "path": "docs/STATE-MACHINE.md",
+      "size": 776,
+      "sha256": "aef6cc4f161d72807ba51cdcb2474b5a57e45d954c2b1c3a23742ec67ff8361b"
+    },
+    {
+      "path": "env/identity.env.example",
+      "size": 601,
+      "sha256": "e8a3443bf681984294dbe760ec1689e7f83d77e69d32b2ef7266396be3418bba"
+    },
+    {
+      "path": "env/niurk-cluster.env",
+      "size": 2709,
+      "sha256": "63cecce9dc59d5827cac8cee48a373043714de7314d773a1eea016d4ee64cf5e"
+    },
+    {
+      "path": "env/services.env.example",
+      "size": 626,
+      "sha256": "dc5fe6fd246b4a550addd670b739cd5e78d4e1aafc28194962a6e70b4bda07da"
+    },
+    {
+      "path": "schemas/niurk-state.schema.json",
+      "size": 864,
+      "sha256": "d6f9de4f565158f9e7d75613ef304cb43d5061ea8e1f9ec2233da0db6680dfe9"
+    },
+    {
+      "path": "systemd/niurk-stack-health.service",
+      "size": 247,
+      "sha256": "c5fab7551995383953e7298b8bf9327ba9f10d86f946b91726d82ece8041ced7"
+    },
+    {
+      "path": "systemd/niurk-stack-health.timer",
+      "size": 161,
+      "sha256": "e0e612e037c33418a4fc6b8c74d22a409358ee36745c3b8a2c22970feeb342ba"
+    },
+    {
+      "path": "upstream/niurk-ops-recovery.contents.txt",
+      "size": 9597,
+      "sha256": "ceb96027bd9e2b2b191a337ec2cdff9b42cdcb0e643227a409d144815a3d4ced"
+    },
+    {
+      "path": "upstream/niurk-ops-recovery.zip",
+      "size": 152518,
+      "sha256": "73357a4f294312c02d46851a1854aff8ef3737e875af9e4cfd7c3c01d87f3306"
+    }
+  ]
+}

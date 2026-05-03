@@ -1,0 +1,12 @@
+{
+  "root": "phi-rho",
+  "phoneme": "/f/",
+  "grapheme": "F",
+  "family": "form",
+  "parameters": {
+    "curvature": 72,
+    "rhythm": 65,
+    "momentum": 61
+  },
+  "ode": "M qddot + C qdot + grad(V) - B qdot = u"
+}

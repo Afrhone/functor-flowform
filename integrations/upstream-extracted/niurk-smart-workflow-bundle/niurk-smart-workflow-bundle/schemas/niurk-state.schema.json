@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Niurk Workflow State",
+  "type": "object",
+  "required": ["state", "time", "namespace", "source_vm", "target_vm", "ai_container"],
+  "properties": {
+    "state": {
+      "type": "string",
+      "enum": [
+        "INIT",
+        "DISCOVERED",
+        "HANDSHAKEN",
+        "AUTH_VALIDATED",
+        "TARGET_READY",
+        "AI_CONTAINER_READY",
+        "SERVICES_RENDERED",
+        "SERVICES_DEPLOYED",
+        "VALIDATED",
+        "CUTOVER_READY",
+        "CUTOVER_DONE",
+        "ROLLBACK_READY"
+      ]
+    },
+    "time": { "type": "string" },
+    "namespace": { "type": "string" },
+    "source_vm": { "type": "string" },
+    "target_vm": { "type": "string" },
+    "ai_container": { "type": "string" },
+    "dry_run": { "type": "string" },
+    "allow_deploy": { "type": "string" }
+  }
+}
